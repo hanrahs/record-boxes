@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0e0e10">
+  <title>Record Boxes</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="top">
+    <div id="ptext">Loading…</div>
+    <div class="pbar"><div id="pfill"></div></div>
+  </header>
+
+  <main>
+    <section id="v-records" class="view">
+      <div class="sticky">
+        <div id="activebar"></div>
+        <div id="backupnag"></div>
+        <div class="searchrow">
+          <input id="q" type="search" placeholder="Search artist, title, cat no…" autocomplete="off" autocorrect="off" spellcheck="false">
+          <button id="scanbtn" class="iconbtn" aria-label="Scan barcode" title="Scan barcode">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M3 5h2v14H3zm3 0h1v14H6zm2 0h2v14H8zm3 0h1v14h-1zm3 0h2v14h-2zm3 0h1v14h-1zm2 0h2v14h-2z"/></svg>
+          </button>
+        </div>
+        <div class="filterrow">
+          <label class="toggle"><input type="checkbox" id="hidepacked"><span></span> Hide packed</label>
+          <span id="count" class="muted small"></span>
+        </div>
+        <div id="barcodechip"></div>
+      </div>
+      <ul id="list" class="list"></ul>
+      <div id="more-wrap" class="pad"></div>
+      <div id="empty" class="pad muted"></div>
+    </section>
+
+    <section id="v-boxes" class="view" hidden></section>
+    <section id="v-more" class="view" hidden></section>
+  </main>
+
+  <nav id="tabs">
+    <button data-tab="records" class="on"><span class="ico">💿</span>Records</button>
+    <button data-tab="boxes"><span class="ico">📦</span>Boxes</button>
+    <button data-tab="more"><span class="ico">⚙️</span>Sync &amp; export</button>
+  </nav>
+
+  <div id="toast" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
